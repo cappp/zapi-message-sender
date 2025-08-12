@@ -12,7 +12,7 @@ def get_contacts():
   
   except Exception as error:
     logger.exception("Error trying to get contacts") 
-    raise ValueError("Check if the table exists in the database")
+    raise ValueError("Check if the Contacts table exists in the database")
 
   finally:
     db.close()
