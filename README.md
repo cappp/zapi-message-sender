@@ -26,7 +26,7 @@ cd zapi-message-sender
 pip install -r requirements.txt
 ```
 
-3. Configure as variáveis de ambiente no arquivo `.env` (exemplo abaixo):
+3. Crie e configure as variáveis de ambiente em um arquivo `.env` (exemplo abaixo):
 
 ```env
 ENVIRONMENT=development (padrão) ou production (debug logger desativado)
