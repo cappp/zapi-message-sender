@@ -17,7 +17,7 @@ Aplicação Python para envio de mensagens WhatsApp em massa via Z-API, usando P
 1. Clone o projeto:
 
 ```bash
-git clone https://github.com/capppp/zapi-message-sender.git
+git clone https://github.com/cappp/zapi-message-sender.git
 cd zapi-message-sender
 ```
 
