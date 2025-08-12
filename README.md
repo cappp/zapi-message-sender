@@ -10,6 +10,7 @@ Aplicação Python para envio de mensagens WhatsApp em massa via Z-API, usando P
 - Biblioteca `requests` para requisições
 - Biblioteca `sqlalchemy` para ORM e conexão com banco
 - Biblioteca  `python-dotenv` para variáveis de ambiente
+- Biblioteca `logging` para facilitar depuração e monitoramento
 
 ## Instalação
 
