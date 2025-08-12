@@ -38,7 +38,7 @@ ZAPI_INSTANCE_STRING=sua_instancia_zapi_aqui
 ZAPI_CLIENT_TOKEN=seu_token_zapi_aqui
 ```
 
-4. Configure o banco de dados PostgresSQL
+4. Configure o banco de dados PostgresSQL:
 
 No Supabase ou qualquer outro serviço compatível com PostgresSQL, crie a tabela `Contacts` com os campos:
 
