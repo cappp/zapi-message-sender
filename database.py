@@ -19,6 +19,7 @@ try:
   SessionLocal = sessionmaker(bind=engine)
     
   logger.debug("Database connected!")
+
 except Exception as error:
   logger.exception("Error creating engine or sessionmaker for the database")
   raise ValueError("Check if the DATABASE_CONNECTION_STRING env variable is valid")
