@@ -28,7 +28,6 @@ def get_logger(name=__name__):
 
         if ENVIRONMENT == "development":
             ch.setLevel(logging.DEBUG)
-
         elif ENVIRONMENT == "production":
             ch.setLevel(logging.INFO)
 

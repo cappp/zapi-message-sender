@@ -34,7 +34,6 @@ def send_text(phone, message):
 
         if "error" in result and result["error"]:
             logger.error(f"Error trying to send text to {phone}: {result}")
-
         else:
             logger.info(f"Text sent successfully to {phone}: {result}")
 

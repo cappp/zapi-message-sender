@@ -15,6 +15,5 @@ if __name__ == "__main__":
 
         for contact in contacts:
             send_text(contact.phone, f"Olá {contact.name}, tudo bem com você?")
-
     else:
         logger.warning("There are no contacts in the Contacts table")
