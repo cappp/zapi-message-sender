@@ -9,42 +9,40 @@ ZAPI_INSTANCE_STRING = os.getenv("ZAPI_INSTANCE_STRING")
 ZAPI_CLIENT_TOKEN = os.getenv("ZAPI_CLIENT_TOKEN")
 
 if not ZAPI_INSTANCE_STRING or not ZAPI_CLIENT_TOKEN:
-  logger.error("ZAPI env variables not found")
-  raise ValueError("ZAPI_INSTANCE_STRING or ZAPI_CLIENT_TOKEN env variables not defined")
+    logger.error("ZAPI env variables not found")
+    raise ValueError(
+        "ZAPI_INSTANCE_STRING or ZAPI_CLIENT_TOKEN env variables not defined"
+    )
+
 
 def send_text(phone, message):
-  url = f"{ZAPI_INSTANCE_STRING}/send-text"
-  
-  headers = {
-    "Client-Token": ZAPI_CLIENT_TOKEN,
-    "Content-Type": "application/json"
-  }
+    url = f"{ZAPI_INSTANCE_STRING}/send-text"
 
-  payload = {
-    "phone": phone,
-    "message": message
-  }
+    headers = {"Client-Token": ZAPI_CLIENT_TOKEN, "Content-Type": "application/json"}
 
-  response = None
+    payload = {"phone": phone, "message": message}
 
-  try:
-    logger.debug(f"Sending text to {phone}...")
+    response = None
 
-    response = post(url, json=payload, headers=headers)
-    response.raise_for_status()
+    try:
+        logger.debug(f"Sending text to {phone}...")
 
-    result = response.json()
+        response = post(url, json=payload, headers=headers)
+        response.raise_for_status()
 
-    if "error" in result and result["error"]:
-      logger.error(f"Error trying to send text to {phone}: {result}")
-    else:
-      logger.info(f"Text sent successfully to {phone}: {result}")
+        result = response.json()
 
-  except Exception as error:
-    logger.exception(f"Exception sending text to {phone}")
+        if "error" in result and result["error"]:
+            logger.error(f"Error trying to send text to {phone}: {result}")
 
-    if response is None:
-      raise ValueError("Check if the ZAPI_INSTANCE_STRING env variable is valid")
+        else:
+            logger.info(f"Text sent successfully to {phone}: {result}")
 
-    if response.status_code == 403:
-      raise ValueError("Check if the ZAPI_CLIENT_TOKEN env variable is valid")
+    except Exception as error:
+        logger.exception(f"Exception sending text to {phone}")
+
+        if response is None:
+            raise ValueError("Check if the ZAPI_INSTANCE_STRING env variable is valid")
+
+        if response.status_code == 403:
+            raise ValueError("Check if the ZAPI_CLIENT_TOKEN env variable is valid")
