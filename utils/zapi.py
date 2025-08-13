@@ -7,7 +7,6 @@ logger = get_logger(__name__)
 
 ZAPI_INSTANCE_STRING = os.getenv("ZAPI_INSTANCE_STRING")
 ZAPI_CLIENT_TOKEN = os.getenv("ZAPI_CLIENT_TOKEN")
-
 if not ZAPI_INSTANCE_STRING or not ZAPI_CLIENT_TOKEN:
     logger.error("ZAPI env variables not found")
     raise ValueError(

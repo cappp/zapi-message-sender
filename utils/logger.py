@@ -11,7 +11,6 @@ print(f"Executing in {ENVIRONMENT} mode")
 
 def get_logger(name=__name__):
     logger = logging.getLogger(name)
-
     if not logger.hasHandlers():
         logger.setLevel(logging.DEBUG)
 
@@ -25,7 +24,6 @@ def get_logger(name=__name__):
         logger.addHandler(fh)
 
         ch = logging.StreamHandler()
-
         if ENVIRONMENT == "development":
             ch.setLevel(logging.DEBUG)
         elif ENVIRONMENT == "production":

@@ -8,7 +8,6 @@ from sqlalchemy.orm import sessionmaker
 logger = get_logger(__name__)
 
 DATABASE_CONNECTION_STRING = os.getenv("DATABASE_CONNECTION_STRING")
-
 if not DATABASE_CONNECTION_STRING:
     logger.error("DATABASE_CONNECTION_STRING not found in the env variables")
     raise ValueError("DATABASE_CONNECTION_STRING env variable not defined")

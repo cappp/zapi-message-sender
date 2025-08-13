@@ -8,7 +8,6 @@ logger = get_logger(__name__)
 
 def get_contacts():
     db = SessionLocal()
-
     try:
         return db.query(Contact).all()
     except Exception as error:
