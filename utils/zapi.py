@@ -36,7 +36,6 @@ def send_text(phone, message):
             logger.error(f"Error trying to send text to {phone}: {result}")
         else:
             logger.info(f"Text sent successfully to {phone}: {result}")
-
     except Exception as error:
         logger.exception(f"Exception sending text to {phone}")
 
