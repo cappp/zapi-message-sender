@@ -30,7 +30,6 @@ def send_text(phone, message):
         response.raise_for_status()
 
         result = response.json()
-
         if "error" in result and result["error"]:
             logger.error(f"Error trying to send text to {phone}: {result}")
         else:
